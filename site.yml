@@ -62,6 +62,7 @@
       service:
         name: elasticsearch
         state: started
+        enabled: true
 
 - hosts: elkservers
   gather_facts: no
@@ -96,6 +97,7 @@
       service:
         name: kibana
         state: started
+        enabled: true
 
 - hosts: elkservers
   gather_facts: no
@@ -172,9 +174,11 @@
       service:
         name: logstash
         state: started
+        enabled: true
 
     - name: Start FileBeat Service
       become: yes
       service:
         name: filebeat
         state: started
+        enabled: true
